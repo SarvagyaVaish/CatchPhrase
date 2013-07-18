@@ -36,6 +36,8 @@ namespace Catch_Phrase
         private void doubleTap_TeamAPanel(object sender, GestureEventArgs e)
         {
             App.ViewModel.ScoreTeamA -= 2;
+            if (App.ViewModel.ScoreTeamA < 0)
+                App.ViewModel.ScoreTeamA = 0;
         }
 
         private void tap_TeamAPanel(object sender, GestureEventArgs e)
@@ -46,6 +48,8 @@ namespace Catch_Phrase
         private void doubleTap_TeamBPanel(object sender, GestureEventArgs e)
         {
             App.ViewModel.ScoreTeamB -= 2;
+            if (App.ViewModel.ScoreTeamB < 0)
+                App.ViewModel.ScoreTeamB = 0;
         }
 
         private void tap_TeamBPanel(object sender, GestureEventArgs e)
@@ -71,7 +75,7 @@ namespace Catch_Phrase
         private void click_shareScore(object sender, EventArgs e)
         {
             ShareStatusTask statustask = new ShareStatusTask();
-            statustask.Status = "haha";
+            statustask.Status = "Had a great time playing Catch Phrase today! Final score " + App.ViewModel.ScoreTeamA.ToString() + " - " + App.ViewModel.ScoreTeamB.ToString();
             statustask.Show();
         }
     }
