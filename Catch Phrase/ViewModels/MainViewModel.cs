@@ -27,7 +27,7 @@ namespace Catch_Phrase
             ScoreTeamA = 0;
             ScoreTeamB = 0;
             Timer = 0;
-            DefaultTimerValue = 30;
+            DefaultTimerValue = 180;
         }
 
         /*
@@ -109,7 +109,7 @@ namespace Catch_Phrase
 
 
 
-        private int _defaultTimerValue = 45;
+        private int _defaultTimerValue;
         public int DefaultTimerValue
         {
             get

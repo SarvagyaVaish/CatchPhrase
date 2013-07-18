@@ -29,13 +29,19 @@ namespace Catch_Phrase
             DataContext = App.ViewModel;
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            newTimer.Stop();
+            newTimer.Tick -= OnTimerTick;
+        }
+
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             //base.OnNavigatedTo(e);
             //String strId = NavigationContext.QueryString["comID"];
 
             // timer interval specified as 1 second
-            newTimer.Interval = TimeSpan.FromSeconds(.33);
+            newTimer.Interval = TimeSpan.FromSeconds(1.0/3.0);
             // Sub-routine OnTimerTick will be called at every 1 second
             newTimer.Tick += OnTimerTick;
             // starting the timer
@@ -73,7 +79,8 @@ namespace Catch_Phrase
 
                 if (App.ViewModel.ScoreTeamA + App.ViewModel.ScoreTeamB == 0)
                     MessageBox.Show("Tap on the Team's score to increase it. Double tap to decrease.");
-                NavigationService.Navigate(new Uri("/HomePage.xaml", UriKind.Relative));
+                NavigationService.GoBack();
+                //NavigationService.Navigate(new Uri("/HomePage.xaml", UriKind.Relative));
             }
         }
 

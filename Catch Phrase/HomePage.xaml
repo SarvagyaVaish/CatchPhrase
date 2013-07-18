@@ -15,11 +15,11 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}">
         <Grid.Background>
             <ImageBrush ImageSource="Background1.png"></ImageBrush>
         </Grid.Background>
-        
+
         <!--Pivot Control-->
         <controls:Pivot Title="CATCH PHRASE">
             <!--Pivot item one-->
@@ -46,9 +46,13 @@
 
             <!--Pivot item two-->
             <controls:PivotItem Header="settings">
-                <Grid/>
+                <StackPanel>
+                    <TextBlock FontSize="32" TextWrapping="Wrap" Text="Set Turn Duration" />
+                    <Slider x:Name="TimerValueSlider" Minimum="30" Maximum="120" SmallChange="0" Value="60" ValueChanged="valueChanged_TimerValueSlider"/>
+                    <TextBlock x:Name="TimerValueHint" FontSize="20"></TextBlock>
+                </StackPanel>
             </controls:PivotItem>
         </controls:Pivot>
     </Grid>
-    
+
 </phone:PhoneApplicationPage>

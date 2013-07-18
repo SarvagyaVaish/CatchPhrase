@@ -21,6 +21,7 @@ namespace Catch_Phrase
         {
             InitializeComponent();
             DataContext = App.ViewModel;
+            TimerValueHint.Text = ((int)TimerValueSlider.Value).ToString() + " seconds";
         }
 
         private void click_StartButton(object sender, RoutedEventArgs e)
@@ -49,6 +50,15 @@ namespace Catch_Phrase
         private void tap_TeamBPanel(object sender, GestureEventArgs e)
         {
             App.ViewModel.ScoreTeamB++;
+        }
+
+        private void valueChanged_TimerValueSlider(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (TimerValueSlider != null)
+            {
+                App.ViewModel.DefaultTimerValue = 3 * (int)TimerValueSlider.Value;
+                TimerValueHint.Text = ((int)TimerValueSlider.Value).ToString() + " seconds";
+            }
         }
     }
 }

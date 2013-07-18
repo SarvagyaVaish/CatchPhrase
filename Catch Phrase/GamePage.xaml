@@ -32,9 +32,8 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="{Binding Phrase}" FontSize="90" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                <TextBlock VerticalAlignment="Center" Height="260" Text="asdasd" FontSize="90" TextAlignment="Center" TextWrapping="Wrap"/>
                 <Button x:Name="NextPhraseButton" Content="Next Phrase" FontSize="50" Click="click_NextPhraseButton"></Button>
-                <TextBlock Text="{Binding ScoreTeamA}"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>
