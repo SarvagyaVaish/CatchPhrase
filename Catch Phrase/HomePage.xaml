@@ -1,0 +1,54 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Catch_Phrase.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="Background1.png"></ImageBrush>
+        </Grid.Background>
+        
+        <!--Pivot Control-->
+        <controls:Pivot Title="CATCH PHRASE">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="new game">
+                <StackPanel Orientation="Vertical">
+
+                    <StackPanel>
+                        <Button x:Name="StartButton" Content="Start" Height="230" FontSize="90" Click="click_StartButton" />
+                    </StackPanel>
+
+                    <StackPanel Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel x:Name="TeamAPanel" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,40,0" DoubleTap="doubleTap_TeamAPanel" Tap="tap_TeamAPanel">
+                            <TextBlock Text="{Binding ScoreTeamA}" FontSize="150" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Team A" FontSize="40"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="40,0,0,0" DoubleTap="doubleTap_TeamBPanel" Tap="tap_TeamBPanel">
+                            <TextBlock Text="{Binding ScoreTeamB}" FontSize="150" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="Team B" FontSize="40"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="settings">
+                <Grid/>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>
