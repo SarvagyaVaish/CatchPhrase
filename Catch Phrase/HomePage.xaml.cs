@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 
 namespace Catch_Phrase
 {
@@ -65,6 +66,13 @@ namespace Catch_Phrase
         {
             App.ViewModel.ScoreTeamA = 0;
             App.ViewModel.ScoreTeamB = 0;
+        }
+
+        private void click_shareScore(object sender, EventArgs e)
+        {
+            ShareStatusTask statustask = new ShareStatusTask();
+            statustask.Status = "haha";
+            statustask.Show();
         }
     }
 }

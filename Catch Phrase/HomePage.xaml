@@ -52,6 +52,30 @@
                     <TextBlock x:Name="TimerValueHint" FontSize="20"></TextBlock>
                 </StackPanel>
             </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="instructions">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock FontSize="23" TextAlignment="Center" TextWrapping="Wrap" Text=
+                               "The game is played in two teams. The goal for each player is to get their team to say the word or word phrase displayed in the disc. One member of a team starts the timer and tries to get his or her team to guess the displayed word or phrase. A clue-giver can make any physical gesture and give almost any verbal clue, but may not say a word that rhymes with any of the words, give the first letter of a word, say the number of syllables, or say part of any word in the clue (e.g., 'worry' for 'worry wart'). When the team guesses correctly, the other team takes its turn. Play continues until the timer runs out. The team not holding the disc when time runs out scores a point." 
+                               />
+                </StackPanel>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="about">
+                <StackPanel>
+                    <TextBlock FontSize="32" TextWrapping="Wrap" Text="CATCH PHRASE" TextAlignment="Center" Margin="0,70,0,30" />
+
+                    <TextBlock FontSize="22" TextWrapping="Wrap" Text="created by::" Margin="0, 20, 0, 0" TextAlignment="Center" />
+                    <TextBlock FontSize="26" TextWrapping="Wrap" Text="Sarvagya Vaish" TextAlignment="Center" FontWeight="Bold" />
+                    <TextBlock FontSize="26" TextWrapping="Wrap" Text="Sean Lander" TextAlignment="Center" FontWeight="Bold" />
+
+                    <TextBlock FontSize="22" TextWrapping="Wrap" Text="special thanks to:" Margin="0, 40, 0, 0" TextAlignment="Center" />
+                    <TextBlock FontSize="26" TextWrapping="Wrap" Text="Adam Welch" TextAlignment="Center" FontWeight="Bold" />
+                    <TextBlock FontSize="26" TextWrapping="Wrap" Text="Den Delimarschi" TextAlignment="Center" FontWeight="Bold" />
+                </StackPanel>
+            </controls:PivotItem>
         </controls:Pivot>
     </Grid>
 
@@ -59,6 +83,7 @@
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.6" >
 
             <shell:ApplicationBarIconButton x:Name="resetGame" IconUri="reset.png" Text="reset" Click="click_resetGame" />
+            <shell:ApplicationBarIconButton x:Name="shareScore" IconUri="shareScore.png" Text="share" Click="click_shareScore" />
 
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
