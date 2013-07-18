@@ -55,4 +55,12 @@
         </controls:Pivot>
     </Grid>
 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.6" >
+
+            <shell:ApplicationBarIconButton x:Name="resetGame" IconUri="reset.png" Text="reset" Click="click_resetGame" />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
 </phone:PhoneApplicationPage>

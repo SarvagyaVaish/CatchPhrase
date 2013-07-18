@@ -60,5 +60,11 @@ namespace Catch_Phrase
                 TimerValueHint.Text = ((int)TimerValueSlider.Value).ToString() + " seconds";
             }
         }
+
+        private void click_resetGame(object sender, EventArgs e)
+        {
+            App.ViewModel.ScoreTeamA = 0;
+            App.ViewModel.ScoreTeamB = 0;
+        }
     }
 }
